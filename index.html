@@ -2,6 +2,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <base href="./" />
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get("p");
+        if (!p) return;
+        var base = document.querySelector("base")?.getAttribute("href") || "/";
+        var url = new URL(base, window.location.origin);
+        var target = url.pathname + (p.startsWith("/") ? p.slice(1) : p) + (params.get("q") || "");
+        window.history.replaceState(null, "", target);
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -18,24 +30,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" href="/icons/icon-72x72.png?v=1" type="image/png" sizes="72x72" />
-    <link rel="shortcut icon" href="/icons/icon-72x72.png?v=1" type="image/png" />
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-152x152.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="./icons/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="shortcut icon" href="./icons/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="./icons/icon-152x152.png" />
 
     <meta property="og:title" content="AgilizaCobrança - Automação de Cobrança" />
     <meta property="og:description" content="Sistema de automação de cobrança inteligente" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/icons/icon-512x512.png" />
+    <meta property="og:image" content="./icons/icon-512x512.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@agilizacobranca" />
-    <meta name="twitter:image" content="/icons/icon-512x512.png" />
-    <script type="module" crossorigin src="/assets/index-D8dpw1LP.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Bt48Of90.css">
+    <meta name="twitter:image" content="./icons/icon-512x512.png" />
+    <script type="module" crossorigin src="./assets/index-CArC0ovj.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bt48Of90.css">
   </head>
 
   <body>

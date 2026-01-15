@@ -6,14 +6,14 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": ".",
+  "scope": ".",
   "categories": ["business", "finance", "productivity"],
   "icons": [
     {
-      "src": "/icons/icon-72x72.png",
-      "sizes": "72x72 96x96 128x128 144x144 152x152 180x180 192x192 384x384 512x512",
-      "type": "image/png"
+      "src": "icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
   "shortcuts": [
@@ -21,10 +21,10 @@
       "name": "Clientes",
       "short_name": "Clientes",
       "description": "Gerenciar clientes",
-      "url": "/clientes",
+      "url": "./clientes",
       "icons": [
         {
-          "src": "/icons/icon-72x72.png",
+          "src": "icons/icon-72x72.png",
           "sizes": "72x72"
         }
       ]
@@ -33,10 +33,10 @@
       "name": "Relatórios",
       "short_name": "Relatórios",
       "description": "Ver relatórios",
-      "url": "/relatorios",
+      "url": "./relatorios",
       "icons": [
         {
-          "src": "/icons/icon-72x72.png",
+          "src": "icons/icon-72x72.png",
           "sizes": "72x72"
         }
       ]
