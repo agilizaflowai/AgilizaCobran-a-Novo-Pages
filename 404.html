@@ -7,7 +7,9 @@
       (function () {
         var path = window.location.pathname;
         var search = window.location.search || "";
-        var hash = window.location.hash || "";
+        if (search.indexOf("p=") !== -1) {
+          return;
+        }
         var segments = path.split("/").filter(Boolean);
         if (segments.length === 0) {
           window.location.replace("./");
@@ -15,7 +17,7 @@
         }
         var base = "/" + segments[0] + "/";
         var rest = "/" + segments.slice(1).join("/");
-        var target = base + "?p=" + encodeURIComponent(rest) + "&q=" + encodeURIComponent(search + hash);
+        var target = base + "?p=" + encodeURIComponent(rest);
         window.location.replace(target);
       })();
     </script>

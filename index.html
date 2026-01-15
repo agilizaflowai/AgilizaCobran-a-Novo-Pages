@@ -10,7 +10,7 @@
         if (!p) return;
         var base = document.querySelector("base")?.getAttribute("href") || "/";
         var url = new URL(base, window.location.origin);
-        var target = url.pathname + (p.startsWith("/") ? p.slice(1) : p) + (params.get("q") || "");
+        var target = url.pathname + (p.startsWith("/") ? p.slice(1) : p);
         window.history.replaceState(null, "", target);
       })();
     </script>
@@ -46,7 +46,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@agilizacobranca" />
     <meta name="twitter:image" content="./icons/icon-512x512.png" />
-    <script type="module" crossorigin src="./assets/index-CArC0ovj.js"></script>
+    <script type="module" crossorigin src="./assets/index-0LQBqNwa.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-Bt48Of90.css">
   </head>
 
