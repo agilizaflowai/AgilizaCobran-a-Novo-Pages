@@ -15,8 +15,15 @@
           window.location.replace("./");
           return;
         }
-        var base = "/" + segments[0] + "/";
-        var rest = "/" + segments.slice(1).join("/");
+        var base;
+        var rest;
+        if (segments.length === 1) {
+          base = "/";
+          rest = path;
+        } else {
+          base = "/" + segments[0] + "/";
+          rest = "/" + segments.slice(1).join("/");
+        }
         var target = base + "?p=" + encodeURIComponent(rest);
         window.location.replace(target);
       })();
