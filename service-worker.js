@@ -3,10 +3,11 @@ const STATIC_CACHE = 'static-v1';
 const DYNAMIC_CACHE = 'dynamic-v1';
 
 const STATIC_ASSETS = [
-  '/',
-  '/src/main.tsx',
-  '/src/index.css',
-  '/manifest.json',
+  './',
+  './manifest.json',
+  './icons/favicon.svg',
+  './icons/icon-72x72.png',
+  './icons/icon-192x192.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
 ];
 
@@ -58,7 +59,7 @@ self.addEventListener('fetch', (event) => {
     }).catch(() => {
       // Offline fallback
       if (event.request.destination === 'document') {
-        return caches.match('/');
+        return caches.match('./');
       }
     })
   );
@@ -80,8 +81,8 @@ function doBackgroundSync() {
 self.addEventListener('push', (event) => {
   const options = {
     body: event.data ? event.data.text() : 'Nova notificação do AgilizaCobrança',
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/icon-72x72.png',
+    icon: 'icons/icon-192x192.png',
+    badge: 'icons/icon-72x72.png',
     actions: [
       {
         action: 'view',
@@ -93,7 +94,7 @@ self.addEventListener('push', (event) => {
       }
     ],
     data: {
-      url: '/'
+      url: '.'
     }
   };
 
@@ -108,7 +109,7 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'view') {
     event.waitUntil(
-      clients.openWindow(event.notification.data.url || '/')
+      clients.openWindow(event.notification.data.url || '.')
     );
   }
 });
